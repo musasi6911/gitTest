@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        div{
+            width: 80px;
+            height: 40px;
+            border-radius: 40px;
+            margin: 100px auto;
+            transition: .5s;
+            position: relative;
+            background-color: rgb(103, 194, 251);
+            background-size: 30px 30px, 20px 20px, 10px 10px, 10px 10px;
+            background-repeat: no-repeat;
+            background-position: right -10px bottom -10px, right 15px bottom -10px, -10px -10px, -15px -5px;
+            background-image:
+                radial-gradient(white 0%, white 70%, transparent 50%),
+                radial-gradient(white 0%, white 70%, transparent 50%),
+                radial-gradient(white 0%, yellow 10%, transparent 10%),
+                radial-gradient(white 0%, yellow 20%, transparent 20%);
+        }
+
+        div::before{
+            content: '';
+            display: block;
+            width: 36px;
+            height: 36px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            transition: .5s;
+            
+            background-size: 36px 36px;
+            background-repeat: no-repeat;
+            background-position: 0 0, 36px 0, 41px 0;
+            background-image: 
+                radial-gradient(orange 0%, orange 40%, yellow 60%, transparent 60%),
+                radial-gradient(white 0%, white 30%, transparent 30%),
+                radial-gradient(orange 0%, orange 50%, transparent 50%);
+        }
+
+        div:focus{
+            background-color: black;
+            background-position: right -10px bottom -30px, right 15px bottom -30px, 10px 10px, 15px 5px;
+        }
+
+        div:focus::before{
+            left: calc(100% - 38px);
+            background-position: -50px 0, -5px 0, 0 0;
+        }
+
+    </style>
+    <title>Dark Light Switch</title>
+</head>
+<body>
+    
+    <div tabindex="0"></div>
+
+</body>
+</html>
